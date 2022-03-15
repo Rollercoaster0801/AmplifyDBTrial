@@ -27,8 +27,8 @@ function PersonalLoansPage() {
         wrap="nowrap"
         gap="1rem"
         position="absolute"
-        top="220px"
-        left="660px"
+        left= "calc(50% - 120px)"
+        top= "calc(50% - 150px)"
       >
         <PersonalLoansText
           width= "177px"
