@@ -70,7 +70,7 @@ const CurrentLoansPage = ({caption,
                 </TableHead>
                 <TableBody>
                 {loans.map((loan,idx)=>{
-                    return <CurrentLoanItem key={loan.id} id={loan.id} idx={idx} purpose={loan.PurposeOfLoan} amount={loan.LoanAmount} terms={loan.Terms} _deleted={loan._deleted}/>
+                    return <CurrentLoanItem key={loan.id} username={loan.username} id={loan.id} idx={idx} purpose={loan.PurposeOfLoan} amount={loan.LoanAmount} terms={loan.Terms} _deleted={loan._deleted}/>
                 })}
                 </TableBody>
             </Table>

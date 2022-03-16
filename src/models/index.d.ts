@@ -13,6 +13,7 @@ export declare class LoanInformation {
   readonly PurposeOfLoan: string;
   readonly LoanAmount: number;
   readonly Terms: number;
+  readonly username?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<LoanInformation, LoanInformationMetaData>);

@@ -43,6 +43,7 @@ const DeleteLoanPage = () => {
           delete loan.PurposeOfLoan
           delete loan.LoanAmount
           delete loan.Terms
+          delete loan.username
           delete loan.createdAt;
           delete loan.updatedAt;
           delete loan._deleted;

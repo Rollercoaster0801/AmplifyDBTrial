@@ -4,7 +4,7 @@ import { BackButton, NextButton } from './ui-components';
 import { Flex, TextField } from '@aws-amplify/ui-react';
 import { useEffect, useState } from 'react';
 import { createLoanInformation } from './graphql/mutations';
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -48,10 +48,12 @@ const fetchLoans = async () => {
       const PurposeOfLoan = document.getElementById("purpose").value
       const LoanAmount = document.getElementById("amount").value
       const Terms = document.getElementById("terms").value
+      const username = await getUsername()
       const newLoan = {
         PurposeOfLoan,
         LoanAmount,
-        Terms
+        Terms,
+        username
       }
       const loanInfo = await API.graphql(graphqlOperation(createLoanInformation, {input: newLoan}))
       const loanList = [...loans]
@@ -160,4 +162,9 @@ const fetchLoans = async () => {
     );
   }
 
+const getUsername = () => {
+    return Auth.currentAuthenticatedUser().then(res=>{
+        return res.username;
+      })
+}
 export default ApplyForLoanPage;

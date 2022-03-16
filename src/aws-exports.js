@@ -7,19 +7,11 @@ const awsmobile = {
     "aws_appsync_region": "ap-southeast-1",
     "aws_appsync_authenticationType": "API_KEY",
     "aws_appsync_apiKey": "da2-vspksai2nfenxjy5t55zhpqiqa",
-    "aws_dynamodb_all_tables_region": "ap-southeast-1",
-    "aws_dynamodb_table_schemas": [
-        {
-            "tableName": "LoanInformation-idbvqca27jg7hmhebtsn6jdabu-staging",
-            "region": "ap-southeast-1"
-        }
-    ],
-    "aws_cognito_identity_pool_id": "ap-southeast-1:5d980729-6a28-4c85-84bf-2940d0296ff0",
+    "aws_cognito_identity_pool_id": "ap-southeast-1:7c8f494e-b8e7-48e2-99a9-c5aaec4cb98e",
     "aws_cognito_region": "ap-southeast-1",
-    "aws_user_pools_id": "ap-southeast-1_A5qWQ246H",
-    "aws_user_pools_web_client_id": "307bbkhot86o9upmquo8va2sdu",
+    "aws_user_pools_id": "ap-southeast-1_gZT1f5mj5",
+    "aws_user_pools_web_client_id": "5ielb8lt363743v3s9muc31cd0",
     "oauth": {},
-    "federationTarget": "COGNITO_IDENTITY_POOLS",
     "aws_cognito_username_attributes": [
         "EMAIL"
     ],
@@ -27,7 +19,7 @@ const awsmobile = {
     "aws_cognito_signup_attributes": [
         "EMAIL"
     ],
-    "aws_cognito_mfa_configuration": "OPTIONAL",
+    "aws_cognito_mfa_configuration": "OFF",
     "aws_cognito_mfa_types": [
         "SMS"
     ],
@@ -37,14 +29,6 @@ const awsmobile = {
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
-    ],
-    "aws_bots": "enable",
-    "aws_bots_config": [
-        {
-            "name": "BookTrip_staging",
-            "alias": "$LATEST",
-            "region": "ap-southeast-1"
-        }
     ]
 };
 

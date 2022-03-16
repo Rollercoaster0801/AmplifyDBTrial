@@ -1,6 +1,6 @@
 import { Button, Flex } from '@aws-amplify/ui-react';
 import { NavLink } from 'react-router-dom';
-import {RectangleBackground, PersonalLoansText, CurrentLoansButton, RequirementsButton, BackToMyServicesButton, ApplyForLoanButton} from './ui-components'
+import {RectangleBackground, PersonalLoansText} from './ui-components'
 
 function PersonalLoansPage() {    
     return (
@@ -11,8 +11,8 @@ function PersonalLoansPage() {
         position= "absolute"
         width= "459px"
         height= "445px"
-        left= "calc(50% - 459px/2 - 0.5px)"
-        top= "calc(50% - 445px/2 + 0.5px)"
+        left= "calc(50% - 459px/2)"
+        top= "calc(50% - 445px/2)"
         
         background= "rgba(255, 255, 255, 0.8)"
         box-shadow= "0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -27,8 +27,8 @@ function PersonalLoansPage() {
         wrap="nowrap"
         gap="1rem"
         position="absolute"
-        top="220px"
-        left="660px"
+        left= "calc(50% - 120px)"
+        top= "calc(50% - 150px)"
       >
         <PersonalLoansText
           width= "177px"
@@ -42,7 +42,7 @@ function PersonalLoansPage() {
           display= "flex"
           align-items= "center"
           text-align= "center"
-          letter-spacing= "0.04em"
+          letterSpacing= "0.04em"
 
           color="#000000"
         />

@@ -8,6 +8,7 @@ export const getLoanInformation = /* GraphQL */ `
       PurposeOfLoan
       LoanAmount
       Terms
+      username
       createdAt
       updatedAt
       _version
@@ -32,6 +33,7 @@ export const listLoanInformations = /* GraphQL */ `
         PurposeOfLoan
         LoanAmount
         Terms
+        username
         createdAt
         updatedAt
         _version
@@ -61,6 +63,7 @@ export const syncLoanInformations = /* GraphQL */ `
         PurposeOfLoan
         LoanAmount
         Terms
+        username
         createdAt
         updatedAt
         _version

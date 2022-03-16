@@ -8,6 +8,7 @@ export const onCreateLoanInformation = /* GraphQL */ `
       PurposeOfLoan
       LoanAmount
       Terms
+      username
       createdAt
       updatedAt
       _version
@@ -23,6 +24,7 @@ export const onUpdateLoanInformation = /* GraphQL */ `
       PurposeOfLoan
       LoanAmount
       Terms
+      username
       createdAt
       updatedAt
       _version
@@ -38,6 +40,7 @@ export const onDeleteLoanInformation = /* GraphQL */ `
       PurposeOfLoan
       LoanAmount
       Terms
+      username
       createdAt
       updatedAt
       _version
