@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { BackButton } from './ui-components';
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
 
 import { listLoanInformations } from './graphql/queries';
 import { useEffect, useState } from 'react';
@@ -15,11 +15,20 @@ import {
 import CurrentLoanItem from './CurrentLoanItem';
 import SignOutButton from './SignOutButton';
 
+let user = '';
+
 const CurrentLoansPage = ({caption,
     highlightOnHover=true,
     size="small",
     variation="striped",}) => {
-    
+    useEffect(()=>{
+        const getUsername = async () => {
+            return Auth.currentAuthenticatedUser().then(res=>{
+                user = res.username;
+                })
+        }
+        getUsername()
+    },[])
     const [loans,setLoans] = useState([])
 
     useEffect(()=>{
@@ -30,9 +39,7 @@ const CurrentLoansPage = ({caption,
         try {
         const loanInfo = await API.graphql(graphqlOperation(listLoanInformations))
         const loanList = loanInfo.data.listLoanInformations.items;
-        console.log(loanList)
         setLoans(loanList)
-        console.log(loans)
         } catch (error) {
         console.log("error on fetching loans", error);
         }
@@ -70,7 +77,7 @@ const CurrentLoansPage = ({caption,
                 </TableHead>
                 <TableBody>
                 {loans.map((loan,idx)=>{
-                    return <CurrentLoanItem key={loan.id} username={loan.username} id={loan.id} idx={idx} purpose={loan.PurposeOfLoan} amount={loan.LoanAmount} terms={loan.Terms} _deleted={loan._deleted}/>
+                    return <CurrentLoanItem key={loan.id} username={loan.username} user={user} id={loan.id} idx={idx} purpose={loan.PurposeOfLoan} amount={loan.LoanAmount} terms={loan.Terms} _deleted={loan._deleted}/>
                 })}
                 </TableBody>
             </Table>
