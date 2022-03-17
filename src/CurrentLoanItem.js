@@ -1,28 +1,15 @@
 import { Button, Flex, TableCell, TableRow } from "@aws-amplify/ui-react";
-import React from "react"
 import { Link } from "react-router-dom";
-import { Auth } from "aws-amplify";
 
-let user = ""
-
-const getUsername = async () => {
-    return Auth.currentAuthenticatedUser().then(res=>{
-        user = res.username;
-      })
-}
-
-getUsername()
-
-const CurrentLoanItem = ({username, id, purpose, amount, terms, _deleted}) => {
-    if (username != user) {
-            return null
-    }
-
-    if (_deleted == true ) {
+const CurrentLoanItem = ({username, user, id, purpose, amount, terms, _deleted}) => {
+    if (username !== user) {
+        console.log(username, user)
         return null
     }
 
-    
+    if (_deleted === true ) {
+        return null
+    }
 
     return (
         <TableRow>
@@ -38,10 +25,5 @@ const CurrentLoanItem = ({username, id, purpose, amount, terms, _deleted}) => {
         </TableRow>
     )
 }
-
-
-console.log(getUsername().then(res=>{return res}))
-
-
 
 export default CurrentLoanItem;
